@@ -25,8 +25,8 @@ dep_js   = 'code'
 
 # Output directories
 out_html = 'endpoints_html'
-out_css  = 'srv' + os.sep + 'static'
-out_js   = 'srv' + os.sep + 'static'
+out_css  = 'public' + os.sep + 'static'
+out_js   = 'public' + os.sep + 'static'
 
 ################################################################################
 # Function to check if compilation should take place
