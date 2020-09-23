@@ -1,0 +1,9 @@
+# Don't share passwords, numbnuts
+.htpasswd
+
+# wp-config holds my database password and WP-specific keys...
+srv/wp-config.php
+
+# This directory contains all my passwords, private keys, etc.
+# DON'T SHARE IT!!!
+secret

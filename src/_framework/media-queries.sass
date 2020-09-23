@@ -1,0 +1,18 @@
+// src/_common/_media-queries.sass
+// Mixin definitions for media queries.
+// Provides definitions for desktop, mobile, etc.
+// For now, this just uses aspect ratios.
+
+@mixin desktop
+	@media not all and (max-aspect-ratio: 1/1)
+		@content
+
+// TODO implement maybe?
+//@mixin tablet
+	@media only screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 1/1)
+		@content
+
+// TODO both rules apply if screen is perfectly square! FIX
+@mixin mobile
+	@media only screen and (max-aspect-ratio: 1/1)
+		@content

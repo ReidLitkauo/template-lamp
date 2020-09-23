@@ -1,0 +1,77 @@
+-###############################################################################
+-# /src/_layouts/primary.pug
+-# The primary template to be used by most pages
+-# This file is not meant to be compiled,
+-# only extended by actual compilation targets
+
+-# Hand-write the doctype and attribution comment
+| 
+| <!DOCTYPE html>
+| 
+| <!-- This website was created by Reid Litkauo - reid.litkauo.com -->
+| 
+
+html(lang='en-US')
+
+	-#############################################################################
+	head
+	
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Required meta tags
+
+		meta(charset='utf-8')
+
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Mobile tags
+
+		meta(name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover')
+
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Dependencies
+
+		-# Third-party
+		script(src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer)
+
+		-# Packed common styling/scripting assets
+		link(rel=stylesheet href="/static/_templates/primary.css")
+		script(src="/static/_templates/primary.js" defer)
+
+		-# Endpoint-specific includes
+		link(rel='stylesheet' href="/static/$endpoint.css")
+		script(src="/static/$endpoint.js" defer)
+		
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Template blocks
+		
+		-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		-# Title
+		title
+			block title
+				| Generic template title, meant to be overridden
+		
+		-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		-# Head: Anything else that the page might need
+		block head
+		
+	-#############################################################################
+	body
+	
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Accessibility
+		
+		-# Screen reader
+		.sr-only.status(aria-live='polite' role='status')
+	
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Body block: Main content of page
+		
+		main
+			block body
+				h1 Default page content, needs to be overridden
+		
+		-#=== === === === === === === === === === === === === === === === === === ==
+		-# Footer block: At end of each page
+		
+		footer
+			block footer
+				p Default footer content

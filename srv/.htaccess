@@ -1,0 +1,19 @@
+# Restrict access to this development subdomain
+AuthType basic
+AuthName "_template"
+AuthUserFile .htpasswd
+AuthGroupFile .htgroups
+Require group _template
+
+RewriteEngine On
+# THE FOLLOWING LINE IS CURSED DO NOT UNCOMMENT IT
+#RewriteBase /
+
+# Get rid of that pesky end slash
+# TODO Broken fix later
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.+)/$ /$1 [R=301,L]
+#RewriteRule ^(.*)/$ /$1 [END,R]
+
+# Re-route all endpoint requests through index.php, barring some special cases.
+RewriteRule ^(?!\/?(static|assets|uploads|robots\.txt|sitemap\.xml).*$)(.*)$ index.php [END,NC,QSA]
